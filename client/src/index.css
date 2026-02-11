@@ -1,0 +1,52 @@
+/* Global Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap');
+
+/* Reset and Base Styles */
+:root {
+  --font-serif: 'Instrument Serif', serif;
+  --font-sans: 'Instrument Sans', sans-serif;
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+  --primary-color: #000000;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Noise overlay from design spec */
+body::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent url("https://assets.codepen.io/108082/Noise.png") 0 0;
+  background-size: 320px 320px;
+  mix-blend-mode: luminosity;
+  opacity: 0.5;
+  z-index: 100;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}

@@ -1,0 +1,90 @@
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 60px;
+    background-color: transparent; // Assuming transparent on hero
+    font-family: 'Instrument Sans', sans-serif;
+    color: #1a1a1a;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logoIcon {
+    font-size: 24px; // Adjust based on SVG/Image size
+}
+
+.brandName {
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 400;
+    color: #1a1a1a;
+}
+
+.navLinks {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+    align-items: center;
+
+    li {
+        a {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 18px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: #555;
+            }
+        }
+    }
+}
+
+.moreLink {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    
+    span {
+        font-size: 10px;
+        transform: translateY(1px);
+    }
+}
+
+.contactButton {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 12px 32px;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+        background-color: #333;
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+@media (max-width: 768px) {
+    .navBar {
+        padding: 20px;
+    }
+
+    .navLinks {
+        display: none; // Ideally would be a hamburger menu for mobile
+    }
+}

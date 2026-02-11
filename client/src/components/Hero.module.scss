@@ -1,0 +1,109 @@
+.heroSection {
+    position: relative;
+    width: 100%;
+    min-height: 80vh; // Adjust based on navbar height
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    // Background noise or simple color
+    background-color: transparent;
+}
+
+.centerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    z-index: 10;
+}
+
+.smallLogoContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .logoIcon {
+        font-size: 1.5rem;
+    }
+
+    .logoText {
+        font-family: 'Instrument Serif', serif;
+        font-size: 1.5rem;
+        color: #1a1a1a;
+    }
+}
+
+.title {
+    display: flex;
+    place-items: center;
+    width: 100%;
+    // mix-blend-mode: difference; // From provided CSS, careful with this on white bg
+    background: transparent;
+
+    h1 {
+        position: relative;
+        margin: 0 auto;
+        width: min(100%, 1200px); // Increased width for larger text
+        font-family: 'Instrument Sans', sans-serif; // Override Montserrat
+        font-weight: 700; // Bold equivalent
+        font-size: clamp(3rem, 10vw, 6rem); // Adjusted for responsiveness
+        text-align: center;
+        letter-spacing: -0.02em; // Tighter tracking looks more modern
+        line-height: 1.1;
+        color: #000;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .line {
+            position: relative;
+            display: inline-flex; // Check if inline-block works better for centered
+            justify-content: center;
+            overflow: hidden; // For some reveal effects
+
+            .char {
+                display: inline-block; // Important for transforms
+            }
+
+            .after {
+                display: block; // Or none, depends on effect 5
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0%; // Start at 0
+                height: 100%;
+                background-color: #000;
+                z-index: 2;
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+.exploreButton {
+    margin-top: 2rem;
+    padding: 16px 48px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+
+    &:hover {
+        background-color: #222;
+        transform: scale(1.05);
+    }
+}
+
+// Navigation Dots for Effects
+
+
+// Global noise overlay from provided CSS
+// Note: This is usually on body, but we can put it on a wrapper if needed.
+// For now, assuming body handles it or we put it here
