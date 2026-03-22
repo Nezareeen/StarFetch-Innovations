@@ -1,0 +1,145 @@
+.aboutSection {
+    width: 100%;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    background-color: transparent; // adjust if it needs a specific bg
+}
+
+.container {
+    width: min(90%, 1200px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro {
+    text-align: left;
+    margin-bottom: 100px;
+    width: 100%;
+    
+    h2 {
+        font-size: 1.5vw; // responsive typography
+        font-weight: 500;
+        line-height: 1.4;
+        color: #111; // assuming dark text on light bg, adjust as needed
+
+        @media (max-width: 1024px) {
+            font-size: 2.5vw;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 20px;
+            br {
+                display: none; // disable breaks on mobile for fluid text
+            }
+        }
+    }
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+    width: 100%;
+}
+
+.featureBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    width: 100%;
+    
+    &.reverse {
+        flex-direction: row-reverse;
+
+        .textContent {
+            text-align: right;
+        }
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column !important; // Stack on mobile
+        gap: 30px;
+        
+        .textContent {
+            text-align: center !important;
+        }
+    }
+}
+
+.textContent {
+    flex: 1;
+    text-align: left;
+    
+    h3 {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #000;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #555;
+        max-width: 500px;
+        
+        // Ensure max-width doesn't constrain proper alignment
+        margin-left: inherit;
+        margin-right: inherit;
+    }
+
+    // specific centering alignment fix
+    display: flex;
+    flex-direction: column;
+}
+
+.featureBlock:not(.reverse) .textContent p {
+    margin-right: auto;
+}
+
+.featureBlock.reverse .textContent p {
+    margin-left: auto;
+}
+
+
+.imageContent {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 20px;
+        object-fit: cover;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+}
+
+.btnContainer {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.exploreBtn {
+    background-color: #000;
+    color: #fff;
+    padding: 15px 40px;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        background-color: #333;
+    }
+}

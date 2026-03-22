@@ -1,0 +1,196 @@
+.milestonesSection {
+    width: 100%;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    overflow: hidden; // Critical to prevent horizontal scroll from slider track
+}
+
+.container {
+    width: min(90%, 1200px);
+    display: flex;
+    flex-direction: column;
+}
+
+// Header
+.headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 60px;
+    gap: 40px;
+
+    @media (max-width: 900px) {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 500;
+    color: #000;
+    flex: 1;
+
+    @media (max-width: 768px) {
+        font-size: 28px;
+    }
+}
+
+.subtitle {
+    flex: 1;
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+    text-align: right;
+    max-width: 500px;
+    margin-left: auto;
+
+    @media (max-width: 900px) {
+        text-align: left;
+        margin-left: 0;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
+}
+
+// Content Area
+.contentArea {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sliderContainer {
+    width: 100%;
+    overflow: visible; // Allows track to break out of container bounds on right side
+    position: relative;
+    
+    // We restrict width to active image's bounds to prevent horizontal scrollbar on body
+    @media (max-width: 768px) {
+        overflow: hidden;
+    }
+}
+
+.imageTrack {
+    display: flex;
+    gap: 2vw; // Spacing between images
+    width: 100%;
+}
+
+.imageWrapper {
+    flex: 0 0 85%;
+    max-width: 1000px; // Cap maximum width
+    border-radius: 20px;
+    overflow: hidden;
+    opacity: 0.5;
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+
+    &.active {
+        opacity: 1;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        display: block;
+    }
+
+    @media (max-width: 768px) {
+        flex: 0 0 100%; // Take full width of container on small screens
+        aspect-ratio: 4 / 3;
+    }
+}
+
+// Info Row (Text & Controls)
+.infoRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 85%;
+    max-width: 1000px;
+    margin-top: 10px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+    }
+}
+
+.textContent {
+    flex: 1;
+    max-width: 600px;
+
+    h3 {
+        font-size: 24px;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 5px;
+    }
+
+    .designation {
+        display: block;
+        font-size: 12px;
+        color: #888;
+        font-weight: 500;
+        margin-bottom: 15px;
+        letter-spacing: 0.5px;
+    }
+
+    p {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.5;
+    }
+}
+
+// Controls
+.controls {
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 30px;
+    padding: 5px;
+    align-self: flex-end;
+
+    @media (max-width: 768px) {
+        align-self: flex-start;
+    }
+}
+
+.arrowBtn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    border-radius: 50%;
+    transition: background-color 0.2s, color 0.2s;
+
+    &:hover:not(:disabled) {
+        background-color: #ebebeb;
+    }
+
+    &:disabled {
+        color: #bbb;
+        cursor: not-allowed;
+    }
+}
+
+.divider {
+    width: 1px;
+    height: 20px;
+    background-color: #ddd;
+    margin: 0 5px;
+}

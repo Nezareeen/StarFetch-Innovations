@@ -1,13 +1,12 @@
 .heroSection {
     position: relative;
     width: 100%;
-    min-height: 80vh; // Adjust based on navbar height
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     overflow: hidden;
-    // Background noise or simple color
     background-color: transparent;
 }
 
