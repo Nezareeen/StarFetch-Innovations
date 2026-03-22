@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import styles from './Hero.module.scss';
-// import smallLogo from '../assets/react.svg'; // Placeholder cleanup
+import icon from '/icon SFI.svg'
 
 const Hero = ({ onAnimationComplete }) => {
     const containerRef = useRef(null);
@@ -81,7 +81,7 @@ const Hero = ({ onAnimationComplete }) => {
             <div className={styles.centerContent}>
                 <div className={styles.smallLogoContainer} ref={logoRef}>
                     {/* Replace with actual small logo if available */}
-                    <span className={styles.logoIcon}>💡</span>
+                    <span className={styles.logoIcon}><img src={icon} alt="icon" height={65}/></span>
                     <span className={styles.logoText}>StarFetch Innovations</span>
                 </div>
 
@@ -96,7 +96,13 @@ const Hero = ({ onAnimationComplete }) => {
                     </h1>
                 </div>
 
-                <button className={styles.exploreButton} ref={buttonRef}>Explore</button>
+                <button 
+                    className={styles.exploreButton} 
+                    ref={buttonRef}
+                    onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                    Explore
+                </button>
             </div>
         </section>
     );
