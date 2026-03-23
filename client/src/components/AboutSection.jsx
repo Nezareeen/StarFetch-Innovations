@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useNavigate } from 'react-router-dom';
 import styles from './AboutSection.module.scss';
 
 // Import Images
@@ -16,6 +17,7 @@ const AboutSection = () => {
     const sectionRef = useRef(null);
     const introRef = useRef(null);
     const featuresRef = useRef([]);
+    const navigate = useNavigate();
 
     const featuresData = [
         {
@@ -130,7 +132,9 @@ const AboutSection = () => {
                 </div>
 
                 <div className={styles.btnContainer}>
-                    <button className={styles.exploreBtn}>Explore Gallery</button>
+                    <button className={styles.exploreBtn} onClick={() => navigate('/gallery')}>
+                        Explore Gallery
+                    </button>
                 </div>
             </div>
         </section>

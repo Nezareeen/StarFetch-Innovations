@@ -1,0 +1,237 @@
+.galleryPage {
+    background-color: #ffffff;
+    color: #ffffff;
+    min-height: 100vh;
+    padding-top: 100px; /* Space for navbar */
+    overflow-x: hidden;
+}
+
+.headerSection {
+    text-align: center;
+    padding: 60px 20px;
+    
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        background: linear-gradient(90deg, #fff, #000000);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    p {
+        font-size: 1.2rem;
+        color: #aaaaaa;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+}
+
+.slidersWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding-bottom: 100px;
+}
+
+.sliderSection {
+    padding: 0 4vw;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.headerRow {
+    margin-bottom: 30px;
+    
+    .title {
+        font-size: 2.2vw;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+}
+
+.contentArea {
+    background-color: #1a1a1a8e;
+    border-radius: 24px;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+.sliderContainer {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+    background-color: #000;
+}
+
+.imageTrack {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    align-items: center;
+}
+
+.imageWrapper {
+    min-width: 100%;
+    margin-right: 2vw;
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    border-radius: 12px;
+    opacity: 0.5;
+    transition: opacity 0.6s ease;
+    
+    &.active {
+        opacity: 1;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+}
+
+.infoRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw 0;
+    
+    .textContent {
+        flex: 1;
+        
+        h3 {
+            font-size: 1.5vw;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #fff;
+        }
+    }
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    padding: 8px;
+    gap: 12px;
+
+    .arrowBtn {
+        background: transparent;
+        border: none;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+
+        &:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        &:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+    }
+
+    .divider {
+        width: 1px;
+        height: 24px;
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+
+@media (max-width: 768px) {
+    .headerSection h1 {
+        font-size: 2.2rem;
+    }
+    
+    .headerRow .title {
+        font-size: 1.8rem;
+    }
+    
+    .infoRow {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        
+        .textContent h3 {
+            font-size: 1.2rem;
+        }
+    }
+
+    .imageWrapper {
+        aspect-ratio: 4/3;
+    }
+
+    .closeBtn {
+        top: -30px;
+        font-size: 30px;
+    }
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+.modalContent {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        max-width: 100%;
+        max-height: 90vh;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+}
+
+.closeBtn {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    line-height: 1;
+
+    &:hover {
+        color: #ddd;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { Link, useLocation } from 'react-router-dom';
 import styles from './NavBar.module.scss';
 import icon from '/icon SFI.svg'
 
@@ -8,6 +9,8 @@ const NavBar = ({ show }) => {
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const location = useLocation();
+    const isHome = location.pathname === '/';
 
     useEffect(() => {
         if (show) {
@@ -49,17 +52,17 @@ const NavBar = ({ show }) => {
             style={{ opacity: 0, transform: 'translateY(-20px)' }}
         >
             <div className={styles.navBar}>
-                <div className={styles.logoContainer}>
+                <Link to="/" className={styles.logoContainer} style={{ textDecoration: 'none', color: 'inherit' }}>
                     <div className={styles.logoIcon}><img src={icon} alt="icon" height={55} className={styles.actualIcon}/></div>
                     <div className={styles.brandName}>StarFetch Innovations</div>
-                </div>
+                </Link>
                 
                 <div className={styles.desktopGroup}>
                     <ul className={styles.navLinks}>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#courses">Courses</a></li>
-                        <li><a href="#more" className={styles.moreLink}>More <span>v</span></a></li>
+                        <li>{isHome ? <a href="#about">About</a> : <Link to="/">About</Link>}</li>
+                        <li><Link to="/gallery">Gallery</Link></li>
+                        <li>{isHome ? <a href="#courses">Courses</a> : <Link to="/">Courses</Link>}</li>
+                        <li>{isHome ? <a href="#more" className={styles.moreLink}>More <span>v</span></a> : <Link to="/">More <span>v</span></Link>}</li>
                     </ul>
                     <button className={styles.contactButton}>Contact Us</button>
                 </div>
@@ -78,11 +81,11 @@ const NavBar = ({ show }) => {
             {/* Mobile Menu Overlay */}
             <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ''}`}>
                 <ul className={styles.mobileNavLinks}>
-                    <li><a href="#about" onClick={() => setIsMenuOpen(false)}>About</a></li>
-                    <li><a href="#gallery" onClick={() => setIsMenuOpen(false)}>Gallery</a></li>
-                    <li><a href="#courses" onClick={() => setIsMenuOpen(false)}>Courses</a></li>
-                    <li><a href="#more" onClick={() => setIsMenuOpen(false)}>More</a></li>
-                    <li><a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact Us</a></li>
+                    <li>{isHome ? <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a> : <Link to="/" onClick={() => setIsMenuOpen(false)}>About</Link>}</li>
+                    <li><Link to="/gallery" onClick={() => setIsMenuOpen(false)}>Gallery</Link></li>
+                    <li>{isHome ? <a href="#courses" onClick={() => setIsMenuOpen(false)}>Courses</a> : <Link to="/" onClick={() => setIsMenuOpen(false)}>Courses</Link>}</li>
+                    <li>{isHome ? <a href="#more" onClick={() => setIsMenuOpen(false)}>More</a> : <Link to="/" onClick={() => setIsMenuOpen(false)}>More</Link>}</li>
+                    <li>{isHome ? <a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact Us</a> : <Link to="/" onClick={() => setIsMenuOpen(false)}>Contact Us</Link>}</li>
                 </ul>
             </div>
         </nav>
