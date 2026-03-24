@@ -4,6 +4,10 @@
     display: flex;
     justify-content: center;
     background-color: transparent; // adjust if it needs a specific bg
+
+    @media (max-width: 768px) {
+        padding: 60px 0;
+    }
 }
 
 .container {
@@ -18,6 +22,10 @@
     margin-bottom: 100px;
     width: 100%;
     
+    @media (max-width: 768px) {
+        margin-bottom: 50px;
+    }
+
     h2 {
         font-size: 1.5vw; // responsive typography
         font-weight: 500;
@@ -42,6 +50,10 @@
     flex-direction: column;
     gap: 120px;
     width: 100%;
+
+    @media (max-width: 768px) {
+        gap: 60px;
+    }
 }
 
 .featureBlock {
