@@ -11,6 +11,7 @@ const NavBar = ({ show }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation();
     const isHome = location.pathname === '/';
+    const isContact = location.pathname === '/contact';
 
     useEffect(() => {
         if (show) {
@@ -64,7 +65,11 @@ const NavBar = ({ show }) => {
                         <li>{isHome ? <a href="#courses">Courses</a> : <Link to="/">Courses</Link>}</li>
                         <li>{isHome ? <a href="#more" className={styles.moreLink}>More <span>v</span></a> : <Link to="/">More <span>v</span></Link>}</li>
                     </ul>
-                    <button className={styles.contactButton}>Contact Us</button>
+                    {!isContact && (
+                        <Link to="/contact" tabIndex="-1">
+                            <button className={styles.contactButton}>Contact Us</button>
+                        </Link>
+                    )}
                 </div>
 
                 {/* Mobile Hamburger Icon */}
@@ -85,7 +90,9 @@ const NavBar = ({ show }) => {
                     <li><Link to="/gallery" onClick={() => setIsMenuOpen(false)}>Gallery</Link></li>
                     <li>{isHome ? <a href="#courses" onClick={() => setIsMenuOpen(false)}>Courses</a> : <Link to="/" onClick={() => setIsMenuOpen(false)}>Courses</Link>}</li>
                     <li>{isHome ? <a href="#more" onClick={() => setIsMenuOpen(false)}>More</a> : <Link to="/" onClick={() => setIsMenuOpen(false)}>More</Link>}</li>
-                    <li>{isHome ? <a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact Us</a> : <Link to="/" onClick={() => setIsMenuOpen(false)}>Contact Us</Link>}</li>
+                    {!isContact && (
+                        <li>{isHome ? <a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact Us</a> : <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact Us</Link>}</li>
+                    )}
                 </ul>
             </div>
         </nav>
