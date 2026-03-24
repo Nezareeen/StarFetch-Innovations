@@ -10,6 +10,21 @@
     background-color: transparent;
 }
 
+.particlesWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Below the center content */
+    pointer-events: none; /* Let clicks pass through if needed, though particles support hover so maybe normal pointer events? The prompt says "moveParticlesOnHover" so let's keep pointer event. But we need to make sure interaction on button is possible. We will set z-index properly. */
+}
+
+/* Enable pointer events on particles wrapper but keep it beneath interactive elements */
+.particlesWrapper {
+    pointer-events: auto;
+}
+
 .centerContent {
     display: flex;
     flex-direction: column;

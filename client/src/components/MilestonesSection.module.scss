@@ -5,6 +5,10 @@
     justify-content: center;
     background-color: transparent;
     overflow: hidden; // Critical to prevent horizontal scroll from slider track
+
+    @media (max-width: 768px) {
+        padding: 60px 0;
+    }
 }
 
 .container {

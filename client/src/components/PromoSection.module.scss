@@ -7,6 +7,10 @@
     align-items: center;
     overflow: hidden; // Critical for marquee
     background-color: transparent; // Match background
+
+    @media (max-width: 768px) {
+        padding: 60px 0 40px 0;
+    }
 }
 
 /* Video Player Styling */

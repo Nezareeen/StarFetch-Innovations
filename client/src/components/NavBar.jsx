@@ -91,7 +91,7 @@ const NavBar = ({ show }) => {
                     <li>{isHome ? <a href="#courses" onClick={() => setIsMenuOpen(false)}>Courses</a> : <Link to="/" onClick={() => setIsMenuOpen(false)}>Courses</Link>}</li>
                     <li>{isHome ? <a href="#more" onClick={() => setIsMenuOpen(false)}>More</a> : <Link to="/" onClick={() => setIsMenuOpen(false)}>More</Link>}</li>
                     {!isContact && (
-                        <li>{isHome ? <a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact Us</a> : <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact Us</Link>}</li>
+                        <li><Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact Us</Link></li>
                     )}
                 </ul>
             </div>

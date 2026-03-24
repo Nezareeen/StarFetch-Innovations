@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import styles from './Hero.module.scss';
 import icon from '/icon SFI.svg'
+import Particles from './Particles';
 
 const Hero = ({ onAnimationComplete }) => {
     const containerRef = useRef(null);
@@ -78,6 +79,19 @@ const Hero = ({ onAnimationComplete }) => {
 
     return (
         <section className={styles.heroSection} ref={containerRef}>
+            <div className={styles.particlesWrapper}>
+                <Particles
+                    particleColors={["#000000"]}
+                    particleCount={200}
+                    particleSpread={10}
+                    speed={0.1}
+                    particleBaseSize={100}
+                    moveParticlesOnHover
+                    alphaParticles={false}
+                    disableRotation={false}
+                    pixelRatio={1}
+                />
+            </div>
             <div className={styles.centerContent}>
                 <div className={styles.smallLogoContainer} ref={logoRef}>
                     {/* Replace with actual small logo if available */}
