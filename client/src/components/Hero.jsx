@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import styles from './Hero.module.scss';
-import icon from '/icon SFI.svg'
+import icon from '/icon-sfi.svg'
 import Particles from './Particles';
 
 const Hero = ({ onAnimationComplete }) => {

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './NavBar.module.scss';
-import icon from '/icon SFI.svg'
+import icon from '/icon-sfi.svg'
 
 const NavBar = ({ show }) => {
     const navRef = useRef(null);

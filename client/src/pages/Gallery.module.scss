@@ -13,7 +13,7 @@
     h1 {
         font-size: 3rem;
         margin-bottom: 20px;
-        background: linear-gradient(90deg, #fff, #000000);
+        background: linear-gradient(90deg, #000000, #000000);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -21,7 +21,7 @@
 
     p {
         font-size: 1.2rem;
-        color: #aaaaaa;
+        color: #000000;
         max-width: 600px;
         margin: 0 auto;
         line-height: 1.6;
@@ -56,7 +56,7 @@
 }
 
 .contentArea {
-    background-color: #1a1a1a8e;
+    background-color: #000000;
     border-radius: 24px;
     padding: 2vw;
     display: flex;
