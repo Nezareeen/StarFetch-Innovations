@@ -31,6 +31,7 @@
     align-items: center;
     gap: 2rem;
     z-index: 10;
+    pointer-events: none;
 }
 
 .smallLogoContainer {
@@ -39,12 +40,12 @@
     gap: 0.5rem;
 
     .logoIcon {
-        font-size: 1.5rem;
+        font-size: 3.5rem;
     }
 
     .logoText {
         font-family: 'Instrument Serif', serif;
-        font-size: 1.5rem;
+        font-size: 3.5rem;
         color: #1a1a1a;
     }
 }
@@ -108,6 +109,7 @@
     font-size: 1.25rem;
     cursor: pointer;
     transition: transform 0.2s, background-color 0.3s;
+    pointer-events: auto;
 
     &:hover {
         background-color: #222;

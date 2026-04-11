@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './FooterSection.module.scss';
-import iconSvg from '/icon SFI.svg';
+import iconSvg from '/icon-sfi.svg';
 
 gsap.registerPlugin(ScrollTrigger);
 
